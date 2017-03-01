@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+
+\bibitem{SC}
+Mehdi Boukhechbaa, Abdenour Bouzouanea, Sébastien Gabourya, Charles
+  Gouin-Vallerandb, Sylvain Girouxc, and Bruno Bouchardd.
+\newblock A novel bluetooth low energy based system for spatial exploration in
+  smart cities.
+\newblock {\em Expert Systems With Applications}, 77:71--82, 2017.
+
+\bibitem{IOT}
+Andrea Zanella, Nicola Bui, Angelo Castellani, Lorenzo Vangelista, and Michele
+  Zorzi.
+\newblock nternet of things for smart cities.
+\newblock {\em IEEE internet of Things Journal}, pages 22--32, 2014.
+
+\bibitem{waze}
+Waze app.
+\newblock \url{https://www.waze.com/}.
+\newblock Accessed: 2016-03-01.
+
+\end{thebibliography}

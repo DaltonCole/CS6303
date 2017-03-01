@@ -1,0 +1,78 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.5in]{geometry} % Normal Margins
+\usepackage{sectsty} % Center sections
+\allsectionsfont{\centering}
+\usepackage{setspace} % Double Spacing
+\doublespacing
+\usepackage{hyperref} % URL in bibio
+
+\title{The Smart Way to Tranfer Data in Smart Cities}
+\author{Dalton Russell Cole}
+
+\begin{document}
+
+%\maketitle
+\newpage
+
+
+\section*{Abstract}
+\paragraph{}
+The future of cities will be Smart Cities. With the popularity that Internet of Things is attracting, this is the next natural step in urban development. In this literature review, \cite{SC} will be discussed. In \cite{SC}, NomaBlue is introduced, which is a new take on spatial recognition in smart cities. The system is based on gathering nomadic data from users in a collaborative fashion using smart Bluetooth technology. The example of sharing shop data is presented, such as discounts and number of people currently in the store. Two case studies were completed, one involving several students at a university and another involving a simulation of 83 years. This paper will also discuss the idea of smart cities as presented in \cite{IOT} and their potential uses.
+
+\section*{Internet of Things for Smart Cities}
+\paragraph{}
+In this section, \cite{IOT} will be discussed. The Internet of Things (IoT) is currently on the rise. The IoT is the use of small devices for various tasks such as collecting data, sending data, relaying, and many more simple tasks that require very little processing power. The IoT has many possible applications, one of which is in smart cities. Within smart cities, IoT could have many different applications, such as: structural health, waste management, air quality, noise monitoring, traffic congestion, city energy consumption, smart parking, smart lighting, and automation and salubrity o public buildings.
+\paragraph{}
+IoT devices could be placed in buildings to constantly measure structural health. Vibration and deformation sensors could be placed throughout the building to monitor attributes such as building stress. These sensors could be combined with other sensors to get a better understanding of small earthquakes on city buildings. Intelligent waste containers are a possible use of IoT devices in waste management. 
+\paragraph{}
+The European Union has recently adopted a 20-20-20 Renewable Energy Directive to decrease climate change. The directive calls for a 20\% reduction in greenhouse gas emissions, a 20\% cut in energy consumption, and a 20\% increase in renewable energy by 2020. The first 20 in this initiative is an incentive to use IoT devices for air quality control. Air quality measurement devices can be placed around a smart city to continuously monitor air conditions. With a continuous stream of data, preventative models can be imposed with thorough data down to the second of each day. 
+\paragraph{}
+Noise monitoring could be imposed with a slew of IoT devices. This monitoring could be used for a number of things, such as keeping noise pollution down through noise level enforcement. Another potential benefit is in the public security realm. The devices could be used to detect noises such as glass crashes or brawls, alerting authorities when either of these sounds are heard. There are obvious privacy risks with the aforementioned use of IoT devices. 
+\paragraph{}
+Traffic congestion and smart parking are two purposes that the general public will likely get behind to push cities into becoming smart cities. IoT devices could be used throughout roadways and give drivers live updates on traffic conditions, similar to the Waze App \cite{waze}. Smart parking could be utilized by having road sensors along with intelligent displays that are used to direct motorists to empty parking spots. Not only will citizens get behind these two ideas, but environmentalist as well. With the continuous monitoring of traffic and parking, drivers will have to drive a shorter distance to get to their final destination, thus eliminating carbon dioxide emissions.
+\paragraph{}
+City energy consumption, smart lighting, and the automation and salubrity of public buildings are big environmental applications as well. Power grid monitoring devices could be placed around the city to continuously monitor power usage throughout. Detailed maps could be drawn, seeing how uses the most energy and possible ways that they could cut back on usage. Smart lighting could be deployed on city street lights to increase usage when needed, and decrease usage when not. The lights would be able to monitor weather conditions and have motion detectors, illuminating the streets only when necessary. Automation and salubrity of public buildings has the potential to keep citizens more comfortable by measuring temperature and humidity as well as reducing heating/cooling costs.
+\paragraph{}
+With the constrained nature of IoT devices, they must be able to handle the load of daily task along with external communication abilities. The IETF standards are a popular base for IoT devices for their open and royalty-free nature. For every protocol stack, there must be a constrained version to be run on IoT devices. For example, HTML/XML has EXI (Efficient XML INterchange), HTTP/TCP has Constrained Application Protocol(CoAp)/UDP, and IPv4/IPv6 has IPv6/6LoWPAN. The size of the HTML and XML messages are too large for highly limited devices to handle. EXI is an alternative to these two in IoT devices. EXI has schema-less and schema-informed encodings. These encodings allow the devices to communicate with outside devices using HTML and XML. The reason why HTTP is so popular is mostly due to its high readability, however, this is a drawback for IoT devices with their limited computing power. HTTP normally relies on the TCP protocol for data transfer, which has costly over head for these devices. CoAP is one possible solution to these challenges. CoAP proposes a binary format that is transported over UDP. Retransmission is only done when a reliable service is required. CoAP is a great solution because it supports ReST methods, there is a one-to-one mapping between the two protocols, and because it supports a wide range of HTTP use scenarios. 
+\paragraph{}
+With the large number of IoT devices in a smart city, the network layer becomes an issue as well. Many devices currently uses the IPv4 address space, however, these are running out. IPv6 is the solution to the lack of IPv4 address, but, with the addresses large space comes extra overhead. IPv6 uses a 128-bit address field, which can be a costly overhead. 6LoWPAN is an established solution to this overhead that works by compressing the IPv6 and UDP headers in constrained networks. When packets are sent using 6LoWPAN, a boarder router performs a conversion between 6LoWPAN and IPv6 and vice-versa. This creates its own issues however. Many IPv4 devices do not accept traffic from IPv6, so there must be some sort of conversion from IPv6 to IPv4. To overcome this, a Network Address and Port Translation like solution can be implemented. An edge router can map IPv6 addresses to a single IPv4 address in outgoing traffic. Incoming IPv4 traffic can go to a specific port on the edge router that will map the traffic to an IPv6 internal address.
+\paragraph{}
+This paper conducted a proof-of-concept experimental study in Padova, Italy. In this experiment, an idea similar to the previously mentioned \textit{smart lighting} is implemented. Wireless nodes will be monitoring public street lighting and collecting environmental data. The nodes will be equipped with multiple sensors, such as: photometer, temperature, humidity, and benzene sensors. The IoT devices will be placed on streetlights throughout the city. The photometer sensor is used to measure the intensity of the lamps light at regular time intervals, or upon request by an administrator. The benzene sensor is used to measure benzene ($C_6H_6$) in the air. 
+\paragraph{}
+The nodes implement a multi-hop 6LoWPAN cloud that uses IEEE 802.15.4 to transfer data. Each node is given a unique IPv6 address which is then compressed using the 6LoWPAN protocol. A gateway node is required to bring the data from the internal network to the live network. This allows each node to be individually accessible from the Internet.
+\paragraph{}
+The nodes collected data on: temperature, humidity, light, and benzene. This data can be used to find interesting correlations between these factors among others. One such correlation is decrease benzene levels at night, which is likely due to the decrease in traffic during this time. Surprisingly, there was no variation of benzene levels during the day time, such as would be expected during rush-hour traffic. The highest levels of benzene was experienced on October 29th in the early afternoon. Looking at the data from the other sensors, there was a decrease in light intensity and temperature in addition to an increase in humidity. This points to a quick rainstorm that happened on this day, resulting in peak benzene levels. The data collected from these IoT devices in this proof-of-concept experiment is vital is showing that smart cities can be a valuable asset to future wellbeing and success.
+
+\section*{A novel Bluetooth low energy based system for spatial exploration in smart cities}
+\paragraph{}
+In this section, the main paper for this literature review is discussed. In \cite{SC}, a system that can seamlessly transfer intelligent nomadic data between users using Bluetooth technology is introduced. This system is called NomaBlue. Two case-studies are used to demonstrate NomaBlue. NomaBlue can operate in both indoor and outdoor environments and does not require a predefined geographic database.
+\paragraph{}
+With the idea of smart cities comes the idea of smart buildings. A smart place of interest (SPOI) is a building with extra sensors build in, in NomaBlue's case, a Bluetooth beacon. This Bluetooth beacon is placed in shops, museums, or other places of interest. The beacon sends out pulses of information, such as current discounts going on or the number of people in the store. Users on the streets then pick up this wireless data on their mobile phones. When one user pases another user on the street, the two users seamlessly exchange data, gaining knowledge that they previously did not have. This allows users to know current information about buildings across town without using the Internet. NomaBlue is built with the battery conscious in-mind. Bluetooth low energy (BLE) used used instead of other wireless data to cut down on energy consumption. NomaBlue also uses little RAM when operating, decreasing the battery usage further.
+\paragraph{Background}
+There are two ways in which location-aware mobile applications can obtain information: on-line and off-line. In on-line mode, the mobile application must constantly connect to the Internet a pull data. The Waze application \cite{waze} is an example of this. Users submit traffic reports such as traffic congestion and cop locations to their servers. Users then see what other users submit in real-time. This way, users can better plan their routes and avoid traffic and police. The alternative to using the Internet is off-line mode. Each user stores geographic data locally on their mobile phone. This reduces the overhead and battery consumption of the on-line mode. However, most methods that utilize the off-line mode require a lot of memory usage. Along with this, anytime a user travels to a new geo-location, they must update there data, otherwise the system is unusable. NomaBlue solves these issue through the collaboration of users. Its approach will work for first instance interactions without any predefined geographic databases. Along with this, NomaBlue allows frequent changes in geographical data that would not be possible to represent in a traditional off-line database. Social interactive data exchanges have been proven in a number of different applications such as with dating services and file-sharing.
+\paragraph{}
+In general, smart cities are constrained by low energy consumption and low transfer rates due to physical an link layer technologies (such as the IoT devices mentioned in the previous section). BLE is a prominent solution to these constraints. BLE offers long term batter lives, up to years, with low maintenance required. BLE is also a cheaper option, costing around \$20 per beacon. BLE uses a low-power, short-ranged signal that can be pick up by many cellphones, which are pre-equipped with Bluetooth technology. The average beacon range can differ from approximately 20 meters to 200 depending on nearby structures and other sources of interference. The next generation of Bluetooth, Bluetooth 5.0, will bring about much larger broadcasting capacity (800\% increase) and an extended range, making IoT connections easier and more robust.
+\paragraph{}
+Bluetooth technology has already proven its self in this space before on Regent Street in London. In 2014, it became the first shopping street to explore mobile phone usage with Bluetooth beacons. A user can download the application for Apple or Android and receive live personalized messages and offers from shops along the street. Bluetooth beacons continuously send out this data to users phone's. Not only do they receive this information, they can also pay their bills automatically through the application at the end of their shopping trip. NomaBlue adds on to this idea by allowing users to gain information about future shops that they have not already passed by allowing users to automatically transfer data.
+\paragraph{}
+In another example of Bluetooth technology, a store in Aberdeen has beacon-equipped mannequins. When a user approaches a mannequin, they gleam details about the cloths and accessories that it is wearing including price and where it can be found in the store.
+\paragraph{Research methodology}
+
+
+
+
+
+
+
+
+
+
+
+
+\medskip
+\newpage
+\bibliographystyle{unsrt} %Used BibTeX style is unsrt
+\bibliography{bibio}
+
+\end{document}
