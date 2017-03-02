@@ -18,4 +18,24 @@ Waze app.
 \newblock \url{https://www.waze.com/}.
 \newblock Accessed: 2016-03-01.
 
+\bibitem{openstreetmap}
+Michele Ruta, Floriano Scioscia, Saverio Ieva, Giuseppe Loseto, and Eugenio~Di
+  Sciascio.
+\newblock Semantic annotation of openstreetmap points of interest for mobile
+  discovery and navigation.
+\newblock {\em IEEE}, pages 33--39, 2012.
+
+\bibitem{DBSCAN}
+Sanjay Chakraborty, N.K. Nagwani, and Lopamudra Dey.
+\newblock Performance comparison of incrementalkmeans and incremental dbscan
+  algorithms.
+\newblock {\em International Journal of Computer Applications}, pages 14--18,
+  2011.
+
+\bibitem{bluetooth}
+Bluetooth 5.0: Here’s why the new wireless standard matters.
+\newblock
+  \url{http://www.ibtimes.com/bluetooth-50-heres-why-new-wireless-standard-matters-2383305}.
+\newblock Accessed: 2016-03-01.
+
 \end{thebibliography}
